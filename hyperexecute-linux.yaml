@@ -1,0 +1,26 @@
+---
+version: 0.1
+runson: linux
+
+autosplit: true
+concurrency: 2
+
+pre:
+  - gradle --version
+  - gradle clean build -x test
+
+testDiscovery:
+  type: raw
+  mode: remote
+  command: grep 'class name' src/test/resources/testng.xml | awk '{print$2}' | sed 's/name=//g' | sed 's/\/\x3e//g'
+
+testRunnerCommand: gradle test --tests $test
+
+retryOnFailure: true
+maxRetries: 1
+
+jobLabel: [gradle-testng, linux, remote-discovery ,autosplit]
+
+cacheKey: '{{ checksum "build.gradle" }}'
+cacheDirectories:
+  - .gradle
