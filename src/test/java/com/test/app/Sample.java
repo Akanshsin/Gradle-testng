@@ -1,12 +1,14 @@
-/*
-@author Kunal Soni
-*/
-
 package com.test.app;
 
 import com.aventstack.extentreports.Status;
 import common.TestBaseClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class Sample extends TestBaseClass {
 
@@ -17,8 +19,13 @@ public class Sample extends TestBaseClass {
                 .assignCategory("Functional_TestCase")
                 .assignCategory("Positive_TestCase")
                 .assignAuthor("Kunal");
+
         logger.info("Verify URL");
+
+        // Open initial URL
         webdriver.openURL("https://www.jivrus.com/resources/articles/technical/how-to-open-browser-console-log");
+
+        // Open Google
         webdriver.openURL("https://www.google.com");
         test.log(Status.INFO, "Open URL");
         logger.info("Open URL");
@@ -31,16 +38,21 @@ public class Sample extends TestBaseClass {
                 .assignCategory("Functional_TestCase")
                 .assignCategory("Positive_TestCase")
                 .assignAuthor("Kunal");
+
         logger.info("Verify Search Box");
-        webdriver.enterText(IConstants.txtName, "Automation testing");
-        try {
-            
-            Thread.sleep(5000);
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("Exception callled````````````````");
-        }
-        webdriver.clickOnButton(IConstants.btnGoogleSearch);
+
+        webdriver.openURL("https://www.google.com");
+
+        // Explicit wait for elements
+        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), Duration.ofSeconds(10));
+
+        WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(IConstants.txtName));
+        searchBox.clear();
+        searchBox.sendKeys("Automation testing");
+
+        WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(IConstants.btnGoogleSearch));
+        searchButton.click();
+
         test.log(Status.INFO, "Verify Search Box");
         logger.info("Verify Search Box");
     }
