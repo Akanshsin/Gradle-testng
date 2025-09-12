@@ -2,7 +2,6 @@ package com.test.app;
 
 import com.aventstack.extentreports.Status;
 import common.TestBaseClass;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -43,8 +42,8 @@ public class Sample extends TestBaseClass {
 
         webdriver.openURL("https://www.google.com");
 
-        // Explicit wait for elements
-        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), 10);
+        // Explicit wait for Selenium 4 (Duration API)
+        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), Duration.ofSeconds(10));
 
         WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(IConstants.txtName));
         searchBox.clear();
@@ -57,4 +56,3 @@ public class Sample extends TestBaseClass {
         logger.info("Verify Search Box");
     }
 }
-
