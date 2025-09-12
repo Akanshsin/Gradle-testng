@@ -2,12 +2,7 @@ package com.test.app;
 
 import com.aventstack.extentreports.Status;
 import common.TestBaseClass;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class Sample extends TestBaseClass {
 
@@ -21,11 +16,10 @@ public class Sample extends TestBaseClass {
 
         logger.info("Verify URL");
 
-        // Open initial URL
         webdriver.openURL("https://www.jivrus.com/resources/articles/technical/how-to-open-browser-console-log");
 
-        // Open Google
         webdriver.openURL("https://www.google.com");
+
         test.log(Status.INFO, "Open URL");
         logger.info("Open URL");
     }
@@ -40,17 +34,18 @@ public class Sample extends TestBaseClass {
 
         logger.info("Verify Search Box");
 
-        webdriver.openURL("https://www.google.com");
+        try {
+            // Wait for Google page to load fully
+            Thread.sleep(4000);
+            webdriver.enterText(IConstants.txtName, "Automation testing");
 
-        // Explicit wait for Selenium 4 (Duration API)
-        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), Duration.ofSeconds(10));
+            // Wait before clicking the button
+            Thread.sleep(4000);
+            webdriver.clickOnButton(IConstants.btnGoogleSearch);
 
-        WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(IConstants.txtName));
-        searchBox.clear();
-        searchBox.sendKeys("Automation testing");
-
-        WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(IConstants.btnGoogleSearch));
-        searchButton.click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         test.log(Status.INFO, "Verify Search Box");
         logger.info("Verify Search Box");
