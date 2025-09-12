@@ -44,7 +44,7 @@ public class Sample extends TestBaseClass {
         webdriver.openURL("https://www.google.com");
 
         // Explicit wait for elements
-        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webdriver.getDriver(), 10);
 
         WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(IConstants.txtName));
         searchBox.clear();
@@ -57,3 +57,4 @@ public class Sample extends TestBaseClass {
         logger.info("Verify Search Box");
     }
 }
+
