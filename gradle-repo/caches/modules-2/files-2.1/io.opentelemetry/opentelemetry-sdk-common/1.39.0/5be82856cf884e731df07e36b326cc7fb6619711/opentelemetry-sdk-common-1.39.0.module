@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.opentelemetry",
+    "module": "opentelemetry-sdk-common",
+    "version": "1.39.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.39.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-common-1.39.0.jar",
+          "url": "opentelemetry-sdk-common-1.39.0.jar",
+          "size": 54033,
+          "sha512": "1d71402f1124e440a2a1003e57a708a747fb5b1b70e7307c23f830f4923b79dad881380f5c42748c0d6019b8a5aa50572614432a9d1c1d3fb152a70d650dacfe",
+          "sha256": "f7adb493a05c0e348c4a56736da1ded238df85ef59dfd502e06d186b6b547f88",
+          "sha1": "fb8168627bf0059445f61081eaa47c4ab787fc2e",
+          "md5": "8c9af4b8d263987d500a7fb1b3268583"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-api",
+          "version": {
+            "requires": "1.39.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "opentelemetry-sdk-common-1.39.0.jar",
+          "url": "opentelemetry-sdk-common-1.39.0.jar",
+          "size": 54033,
+          "sha512": "1d71402f1124e440a2a1003e57a708a747fb5b1b70e7307c23f830f4923b79dad881380f5c42748c0d6019b8a5aa50572614432a9d1c1d3fb152a70d650dacfe",
+          "sha256": "f7adb493a05c0e348c4a56736da1ded238df85ef59dfd502e06d186b6b547f88",
+          "sha1": "fb8168627bf0059445f61081eaa47c4ab787fc2e",
+          "md5": "8c9af4b8d263987d500a7fb1b3268583"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-common-1.39.0-javadoc.jar",
+          "url": "opentelemetry-sdk-common-1.39.0-javadoc.jar",
+          "size": 130806,
+          "sha512": "066eeff39f30e8c0f92739e4c168fb07c206d599dc7801fa17c6adc0e406542a06e2e8af4011873a9caf27ccf0f2e2178b0e97e1af47a0e2d1af2207433f7382",
+          "sha256": "a5a238633da574b04e680e022753f909cf37f260b7217950536dab0fad2f6b5a",
+          "sha1": "b10074d0cca9d7d1dcec221003b10320ac770722",
+          "md5": "1d2aed0110c57fefb470c789a5d67d3b"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "opentelemetry-sdk-common-1.39.0-sources.jar",
+          "url": "opentelemetry-sdk-common-1.39.0-sources.jar",
+          "size": 37225,
+          "sha512": "36cd1382874e605f7b2da5629b57fef4e4c62187623dcdfbee1f723ae1499781db619d7141c7e7fddc4605c9de176ed3c2e86ca875abe7dd4349029300e2a68c",
+          "sha256": "aef4d4819289031228695625eee1c264d364b27a244b449eb1152d4c4fdfc840",
+          "sha1": "8edd81bcb7ee8f459b65d2ba0bc4157dff8bbb3a",
+          "md5": "202b2f3eba4a591f70354001a44f008b"
+        }
+      ]
+    }
+  ]
+}
