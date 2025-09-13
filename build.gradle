@@ -5,10 +5,14 @@ plugins {
 }
 
 repositories {
-    google()
-    jcenter()
+    maven {
+        url "https://repo.maven.apache.org/maven2"
+    }
     mavenCentral()
+    google()
+    mavenLocal()
 }
+
 
 dependencies {
 
@@ -48,4 +52,5 @@ task smokeTests(type: Test) {
         suites 'src/test/resources/testng.xml'
         includeGroups 'Smoke'
     }
+
 }
