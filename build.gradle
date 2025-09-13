@@ -6,27 +6,41 @@ plugins {
 
 repositories {
     google()
-    jcenter()
     mavenCentral()
 }
 
 dependencies {
+    // Selenium stable versions
+    implementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.22.0'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.22.0'
 
-    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6'
-    implementation 'org.seleniumhq.selenium:selenium-server:4.0.0-alpha-2'
-    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5'
-    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5'
-    implementation 'org.apache.poi:poi:4.1.2'
-    implementation 'jexcelapi:jxl:2.4.2'
-    implementation 'com.aventstack:extentreports:5.0.4'
-    implementation 'org.apache.poi:poi-ooxml:3.10-FINAL'
-    implementation 'org.apache.logging.log4j:log4j-api:2.13.3'
-    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
+    // Apache POI for Excel
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    // Excel API
+    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
+
+    // Reporting
+    implementation 'com.aventstack:extentreports:5.0.9'
+
+    // Logging
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+
+    // Email
     implementation 'org.apache.commons:commons-email:1.5'
-    testImplementation 'org.testng:testng:7.3.0'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:4.2.2'
-    implementation group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+
+    // Screenshot library
+    implementation 'ru.yandex.qatools.ashot:ashot:1.5.4'
+
+    // Test dependencies
+    testImplementation 'org.testng:testng:7.8.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
 }
+
+
 
 // run with the command 'gradle clean test' in CLI
 test {
